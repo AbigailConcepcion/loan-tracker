@@ -1,0 +1,17 @@
+CREATE TABLE IF NOT EXISTS loans (
+  id TEXT PRIMARY KEY,
+  name TEXT NOT NULL,
+  principal REAL NOT NULL,
+  interest REAL DEFAULT 0,
+  dueDate TEXT,
+  notes TEXT
+);
+
+CREATE TABLE IF NOT EXISTS payments (
+  id TEXT PRIMARY KEY,
+  loanId TEXT NOT NULL,
+  amount REAL NOT NULL,
+  date TEXT NOT NULL,
+  note TEXT,
+  FOREIGN KEY(loanId) REFERENCES loans(id) ON DELETE CASCADE
+);

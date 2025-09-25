@@ -1,0 +1,3 @@
+/* Simple styles for readability */
+body { background: #f6f7fb; color: #111; margin:0; padding:0; }
+input, textarea, button { font-family: inherit; }
